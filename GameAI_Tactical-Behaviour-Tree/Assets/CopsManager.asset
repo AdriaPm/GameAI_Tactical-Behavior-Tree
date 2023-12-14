@@ -15,102 +15,114 @@ MonoBehaviour:
   brickName: Assets/CopsManager.asset
   xml: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<BehaviorBricks xmlns:ref=\"urn:padaone\"
     version=\"1.0\">\r\n  <BehaviorTree id=\"0\" />\r\n  <runtimeInfo>\r\n    <BehaviorTree
-    id=\"0\" guid=\"1f3051d4e4a8df749a340c60c19437f4\" nextId=\"10\">\r\n      <root>\r\n       
+    id=\"0\" guid=\"1f3051d4e4a8df749a340c60c19437f4\" nextId=\"11\">\r\n      <root>\r\n       
     <SequenceNode id=\"1\" />\r\n      </root>\r\n      <inputParams />\r\n     
-    <outputParams />\r\n      <localParams />\r\n    </BehaviorTree>\r\n    <SequenceNode
+    <outputParams />\r\n      <localParams>\r\n        <localValues>\r\n         
+    <entry name=\"Cop\" type=\"UnityEngine.GameObject\" isBlackboard=\"False\" />\r\n       
+    </localValues>\r\n      </localParams>\r\n    </BehaviorTree>\r\n    <SequenceNode
     id=\"1\">\r\n      <children>\r\n        <elem>\r\n          <RepeatUntilSuccess
     id=\"2\" />\r\n        </elem>\r\n        <elem>\r\n          <RepeatUntilFailed
     id=\"3\" />\r\n        </elem>\r\n      </children>\r\n      <inputParams />\r\n     
     <outputParams />\r\n      <localParams />\r\n    </SequenceNode>\r\n    <RepeatUntilSuccess
-    id=\"2\">\r\n      <child>\r\n        <ConditionNode id=\"9\" />\r\n      </child>\r\n     
+    id=\"2\">\r\n      <child>\r\n        <ConditionNode id=\"10\" />\r\n      </child>\r\n     
     <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </RepeatUntilSuccess>\r\n   
     <RepeatUntilFailed id=\"3\">\r\n      <child>\r\n        <SequenceNode id=\"4\"
     />\r\n      </child>\r\n      <inputParams />\r\n      <outputParams />\r\n     
-    <localParams />\r\n    </RepeatUntilFailed>\r\n    <ConditionNode id=\"9\">\r\n     
+    <localParams />\r\n    </RepeatUntilFailed>\r\n    <ConditionNode id=\"10\">\r\n     
     <condition>\r\n        <ConditionEvalNode id=\"0\" />\r\n      </condition>\r\n     
-    <inputParams>\r\n        <inputValues>\r\n          <entry name=\"target\" type=\"UnityEngine.GameObject\"
-    isBlackboard=\"True\" />\r\n          <entry name=\"closeDistance\" type=\"System.Single\"
-    isBlackboard=\"True\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
-    <outputParams />\r\n      <localParams />\r\n    </ConditionNode>\r\n    <SequenceNode
-    id=\"4\">\r\n      <children>\r\n        <elem>\r\n          <ActionNode id=\"5\"
-    />\r\n        </elem>\r\n        <elem>\r\n          <RandomSelectorNode id=\"6\"
-    />\r\n        </elem>\r\n      </children>\r\n      <inputParams />\r\n     
+    <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </ConditionNode>\r\n   
+    <SequenceNode id=\"4\">\r\n      <children>\r\n        <elem>\r\n          <ActionNode
+    id=\"5\" />\r\n        </elem>\r\n        <elem>\r\n          <RandomSelectorNode
+    id=\"6\" />\r\n        </elem>\r\n      </children>\r\n      <inputParams />\r\n     
     <outputParams />\r\n      <localParams />\r\n    </SequenceNode>\r\n    <ConditionEvalNode
-    id=\"0\" policy=\"ATOMIC_CHECK\" name=\"Perception/IsTargetClose\">\r\n     
+    id=\"0\" policy=\"ATOMIC_CHECK\" name=\"MyConditions/Is Robber Near?\">\r\n     
     <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </ConditionEvalNode>\r\n   
     <ActionNode id=\"5\" action=\"Cops/FindClosestCop\">\r\n      <inputParams />\r\n     
-    <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n    <RandomSelectorNode
-    id=\"6\">\r\n      <probs>\r\n        <elem>1</elem>\r\n        <elem>1</elem>\r\n     
-    </probs>\r\n      <children>\r\n        <elem>\r\n          <ActionNode id=\"7\"
-    />\r\n        </elem>\r\n        <elem>\r\n          <ActionNode id=\"8\" />\r\n       
-    </elem>\r\n      </children>\r\n      <inputParams />\r\n      <outputParams
-    />\r\n      <localParams />\r\n    </RandomSelectorNode>\r\n    <ActionNode id=\"7\"
-    action=\"GameObject/SendMessage\">\r\n      <inputParams />\r\n      <outputParams
-    />\r\n      <localParams />\r\n    </ActionNode>\r\n    <ActionNode id=\"8\"
-    action=\"GameObject/SendMessage\">\r\n      <inputParams />\r\n      <outputParams
-    />\r\n      <localParams />\r\n    </ActionNode>\r\n  </runtimeInfo>\r\n  <editorInfo>\r\n   
-    <BehaviorTree id=\"0\" _name=\"TacticalBB\" _description=\"\" _removeIfClosed=\"False\">\r\n     
-    <_rootList>\r\n        <elem>\r\n          <SequenceNode id=\"1\" />\r\n       
-    </elem>\r\n        <elem>\r\n          <RepeatUntilSuccess id=\"2\" />\r\n       
-    </elem>\r\n        <elem>\r\n          <RepeatUntilFailed id=\"3\" />\r\n       
-    </elem>\r\n        <elem>\r\n          <SequenceNode id=\"4\" />\r\n        </elem>\r\n       
-    <elem>\r\n          <ActionNode id=\"5\" />\r\n        </elem>\r\n        <elem>\r\n         
-    <RandomSelectorNode id=\"6\" />\r\n        </elem>\r\n        <elem>\r\n         
+    <outputParams>\r\n        <outputValues>\r\n          <entry name=\"game object\"
+    type=\"UnityEngine.GameObject\" isBlackboard=\"True\" blackboard=\"Cop\" />\r\n       
+    </outputValues>\r\n      </outputParams>\r\n      <localParams />\r\n    </ActionNode>\r\n   
+    <RandomSelectorNode id=\"6\">\r\n      <probs>\r\n        <elem>1</elem>\r\n       
+    <elem>1</elem>\r\n      </probs>\r\n      <children>\r\n        <elem>\r\n         
     <ActionNode id=\"7\" />\r\n        </elem>\r\n        <elem>\r\n          <ActionNode
-    id=\"8\" />\r\n        </elem>\r\n        <elem>\r\n          <ConditionNode
-    id=\"9\" />\r\n        </elem>\r\n      </_rootList>\r\n      <_nodes>\r\n       
-    <nodes>\r\n          <SequenceNode id=\"1\" />\r\n          <RepeatUntilSuccess
-    id=\"2\" />\r\n          <RepeatUntilFailed id=\"3\" />\r\n          <SequenceNode
-    id=\"4\" />\r\n          <ActionNode id=\"5\" />\r\n          <RandomSelectorNode
+    id=\"8\" />\r\n        </elem>\r\n      </children>\r\n      <inputParams />\r\n     
+    <outputParams />\r\n      <localParams />\r\n    </RandomSelectorNode>\r\n   
+    <ActionNode id=\"7\" action=\"GameObject/SendMessage\">\r\n      <inputParams>\r\n       
+    <inputValues>\r\n          <entry name=\"methodName\" type=\"System.String\"
+    isBlackboard=\"False\" value=\"BBSeekRobber\" />\r\n          <entry name=\"game
+    object\" type=\"UnityEngine.GameObject\" isBlackboard=\"True\" blackboard=\"Cop\"
+    />\r\n        </inputValues>\r\n      </inputParams>\r\n      <outputParams />\r\n     
+    <localParams />\r\n    </ActionNode>\r\n    <ActionNode id=\"8\" action=\"GameObject/SendMessage\">\r\n     
+    <inputParams>\r\n        <inputValues>\r\n          <entry name=\"methodName\"
+    type=\"System.String\" isBlackboard=\"False\" value=\"BBSeekTreasure\" />\r\n         
+    <entry name=\"game object\" type=\"UnityEngine.GameObject\" isBlackboard=\"True\"
+    blackboard=\"Cop\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
+    <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n  </runtimeInfo>\r\n 
+    <editorInfo>\r\n    <BehaviorTree id=\"0\" _name=\"TacticalBB\" _description=\"\"
+    _removeIfClosed=\"False\">\r\n      <_rootList>\r\n        <elem>\r\n         
+    <SequenceNode id=\"1\" />\r\n        </elem>\r\n        <elem>\r\n          <RepeatUntilSuccess
+    id=\"2\" />\r\n        </elem>\r\n        <elem>\r\n          <RepeatUntilFailed
+    id=\"3\" />\r\n        </elem>\r\n        <elem>\r\n          <SequenceNode id=\"4\"
+    />\r\n        </elem>\r\n        <elem>\r\n          <ActionNode id=\"5\" />\r\n       
+    </elem>\r\n        <elem>\r\n          <RandomSelectorNode id=\"6\" />\r\n       
+    </elem>\r\n        <elem>\r\n          <ActionNode id=\"7\" />\r\n        </elem>\r\n       
+    <elem>\r\n          <ActionNode id=\"8\" />\r\n        </elem>\r\n        <elem>\r\n         
+    <ConditionNode id=\"10\" />\r\n        </elem>\r\n      </_rootList>\r\n     
+    <_nodes>\r\n        <nodes>\r\n          <SequenceNode id=\"1\" />\r\n         
+    <RepeatUntilSuccess id=\"2\" />\r\n          <RepeatUntilFailed id=\"3\" />\r\n         
+    <SequenceNode id=\"4\" />\r\n          <ActionNode id=\"5\" />\r\n          <RandomSelectorNode
     id=\"6\" />\r\n          <ActionNode id=\"7\" />\r\n          <ActionNode id=\"8\"
-    />\r\n          <ConditionNode id=\"9\" />\r\n        </nodes>\r\n      </_nodes>\r\n   
+    />\r\n          <ConditionNode id=\"10\" />\r\n        </nodes>\r\n      </_nodes>\r\n   
     </BehaviorTree>\r\n    <SequenceNode id=\"1\">\r\n      <_data>\r\n        <data
-    breakpoint=\"0\" selected=\"False\" position=\"566.3873 238.5831\" name=\"Sequence\"
+    breakpoint=\"0\" selected=\"False\" position=\"262.0611 110.8053\" name=\"Sequence\"
     description=\"Executes all its children in sequence until all of them are successful\"
     cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <SequenceNode id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
     <RepeatUntilSuccess id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"270.7302 361.4164\" name=\"Repeat Until Success\"
+    selected=\"False\" position=\"36.4037 211.1386\" name=\"Repeat Until Success\"
     description=\"Repeats the execution of its child node until it success\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <RepeatUntilSuccess
     id=\"2\" />\r\n          <SequenceNode id=\"1\" />\r\n        </data>\r\n     
     </_data>\r\n    </RepeatUntilSuccess>\r\n    <RepeatUntilFailed id=\"3\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"764.7327
-    357.4165\" name=\"Repeat Until Failed\" description=\"Repeats the execution of
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"375.4065
+    214.6387\" name=\"Repeat Until Failed\" description=\"Repeats the execution of
     its child node until it fails\" cardinality=\"1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <RepeatUntilFailed id=\"3\" />\r\n         
     <SequenceNode id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </RepeatUntilFailed>\r\n   
-    <ConditionNode id=\"9\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"278.9525 510.8064\" name=\"Perception/IsTargetClose\" description=\"Checks
-    whether a target is close depending on a given distance\" cardinality=\"0\" hasParent=\"True\">\r\n         
-    <BehaviorTree id=\"0\" />\r\n          <ConditionNode id=\"9\" />\r\n         
-    <RepeatUntilSuccess id=\"2\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionNode>\r\n   
-    <SequenceNode id=\"4\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"819.8442 465.3058\" name=\"Sequence\" description=\"Executes all its
-    children in sequence until all of them are successful\" cardinality=\"-1\" hasParent=\"True\">\r\n         
-    <BehaviorTree id=\"0\" />\r\n          <SequenceNode id=\"4\" />\r\n         
-    <RepeatUntilFailed id=\"3\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
+    <ConditionNode id=\"10\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
+    selected=\"False\" position=\"57.7569 325.1385\" name=\"MyConditions/Is Robber
+    Near?\" description=\"Checks whether Robber is near the Treasure.\" cardinality=\"0\"
+    hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ConditionNode
+    id=\"10\" />\r\n          <RepeatUntilSuccess id=\"2\" />\r\n        </data>\r\n     
+    </_data>\r\n    </ConditionNode>\r\n    <SequenceNode id=\"4\">\r\n      <_data>\r\n       
+    <data breakpoint=\"0\" selected=\"False\" position=\"428.0179 320.028\" name=\"Sequence\"
+    description=\"Executes all its children in sequence until all of them are successful\"
+    cardinality=\"-1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
+    <SequenceNode id=\"4\" />\r\n          <RepeatUntilFailed id=\"3\" />\r\n       
+    </data>\r\n      </_data>\r\n    </SequenceNode>\r\n    <ConditionEvalNode id=\"0\">\r\n     
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"0 0\"
+    name=\"AlwaysTrue\" description=\"Eval\" cardinality=\"1\" hasParent=\"False\">\r\n         
+    <BehaviorTree id=\"0\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
     <ActionNode id=\"5\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"658.7324 575.3068\" name=\"Cops/FindClosestCop\" description=\"Get
+    position=\"279.4062 422.5291\" name=\"Cops/FindClosestCop\" description=\"Get
     the Closest Free Cop.\" cardinality=\"0\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ActionNode id=\"5\" />\r\n          <SequenceNode id=\"4\"
     />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n    <RandomSelectorNode
     id=\"6\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"929.7336 574.0846\" name=\"Random Selector\" description=\"Selects
+    position=\"516.6573 422.5568\" name=\"Random Selector\" description=\"Selects
     randomly one of its children\" cardinality=\"-1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <RandomSelectorNode id=\"6\" />\r\n         
     <SequenceNode id=\"4\" />\r\n        </data>\r\n      </_data>\r\n    </RandomSelectorNode>\r\n   
     <ActionNode id=\"7\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"837.6223 706.0844\" name=\"GameObject/SendMessage\" description=\"Calls
+    position=\"369.5461 533.3066\" name=\"GameObject/SendMessage\" description=\"Calls
     the method named methodName on every MonoBehaviour in this game object\" cardinality=\"0\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"7\" />\r\n          <RandomSelectorNode id=\"6\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ActionNode id=\"8\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"1048.956 706.3067\" name=\"GameObject/SendMessage\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"559.6305 534.7789\" name=\"GameObject/SendMessage\"
     description=\"Calls the method named methodName on every MonoBehaviour in this
     game object\" cardinality=\"0\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ActionNode id=\"8\" />\r\n          <RandomSelectorNode
     id=\"6\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.9
+  zoom: 0.8
   subslist: []
   _guid: 1f3051d4e4a8df749a340c60c19437f4
